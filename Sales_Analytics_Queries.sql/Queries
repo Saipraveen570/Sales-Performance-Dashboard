@@ -1,0 +1,44 @@
+
+-- 1. Total Sales, Cost, and Profit
+SELECT 
+    SUM(Sales) AS Total_Sales,
+    SUM(Cost) AS Total_Cost,
+    SUM(Profit) AS Total_Profit
+FROM SalesData;
+
+-- 2. Sales by Region
+SELECT 
+    Region,
+    SUM(Sales) AS Total_Sales,
+    SUM(Profit) AS Total_Profit
+FROM SalesData
+GROUP BY Region
+ORDER BY Total_Sales DESC;
+
+-- 3. Top 10 Customers by Sales
+SELECT 
+    CustomerName,
+    SUM(Sales) AS Customer_Sales,
+    SUM(Profit) AS Customer_Profit
+FROM SalesData
+GROUP BY CustomerName
+ORDER BY Customer_Sales DESC
+LIMIT 10;
+
+-- 4. Sales by Sub-Category
+SELECT 
+    SubCategory,
+    SUM(Sales) AS SubCategory_Sales,
+    SUM(Profit) AS SubCategory_Profit
+FROM SalesData
+GROUP BY SubCategory
+ORDER BY SubCategory_Sales DESC;
+
+-- 5. Ship Mode Analysis
+SELECT 
+    ShipMode,
+    COUNT(OrderID) AS Total_Orders,
+    SUM(Sales) AS Total_Sales
+FROM SalesData
+GROUP BY ShipMode
+ORDER BY Total_Orders DESC;
