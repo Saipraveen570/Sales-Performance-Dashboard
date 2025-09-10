@@ -17,7 +17,4 @@ It provides interactive visualizations and KPIs that enable business stakeholder
 - Excel (Data Cleaning & Preparation)  
 - DAX for KPIs & Calculations  
 
-### 📷 Dashboard Preview  
-![Dashboard Screenshot](Power%20Bi%20project.png)
 
----
